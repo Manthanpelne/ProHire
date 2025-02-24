@@ -9,7 +9,7 @@ import { PostJob } from './pages/postJob'
 import { SavedJobs } from './pages/savedJobs'
 import { MyJobs } from './pages/myJobs'
 import { Onboarding } from './pages/onboarding'
-import { Ecom } from './ecom'
+
 
 
 const router = createBrowserRouter([
@@ -43,10 +43,6 @@ const router = createBrowserRouter([
       {
         path: "/my-jobs",
         element: <MyJobs/>
-      },
-      {
-        path: "/ecom",
-        element: <Ecom/>
       }
     ]
   }
