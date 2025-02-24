@@ -1,0 +1,17 @@
+.bg{
+    background: rgb(4,51,40);
+    background: linear-gradient(349deg, rgba(4,51,40,1) 35%, rgba(4,51,40,0.8688725490196079) 54%, rgba(4,51,40,0.9809173669467787) 98%);
+}
+
+.signupBtn{
+    background: rgb(4,51,40);
+    background: linear-gradient(0deg, rgba(4,51,40,1) 35%, rgba(4,51,40,0.8688725490196079) 54%, rgba(4,51,40,0.9809173669467787) 98%);
+}
+
+.grid-background{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
