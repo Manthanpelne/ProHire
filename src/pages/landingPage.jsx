@@ -7,7 +7,7 @@ export const LandingPage = () => {
 
   return (
    <>
-      <h1 className="text-3xl font-bold">Welcome to our Website</h1>
+      <h1 className="text-3xl font-bold">Welcome to my Website</h1>
 
       <button
         onClick={toggleTheme}
