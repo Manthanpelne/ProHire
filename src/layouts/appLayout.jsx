@@ -28,7 +28,7 @@ export const AppLayout = () => {
         {/* Content */}
         <div className="relative z-10 flex flex-col min-h-screen">
           <Header />
-          <div className="flex-1">
+          <div className="flex-1 ">
             <Outlet />
           </div>
           <Footer />
