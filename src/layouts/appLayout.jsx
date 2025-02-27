@@ -11,7 +11,7 @@ export const AppLayout = () => {
     const { darkMode } = useTheme();
   
     return (
-      <main className={`relative min-h-screen flex flex-col transition-colors duration-500
+      <main className={`relative max-w-screen-2xl px-5 min-h-screen flex flex-col transition-colors duration-500
         ${darkMode ? "bg-black text-white" : "bg-white text-black"}`}>
         
         {/* Background */}

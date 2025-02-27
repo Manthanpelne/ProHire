@@ -7,7 +7,7 @@ export const LandingPage = () => {
 
   return (
    <>
-      <h1 className="text-3xl font-bold">Welcome to my Website</h1>
+      {/* <h1 className="text-3xl font-bold">Welcome to my Website</h1>
 
       <button
         onClick={toggleTheme}
@@ -16,7 +16,7 @@ export const LandingPage = () => {
                      bg-gray-900 text-white dark:bg-gray-900 cursor-pointer dark:text-white"
       >
         Toggle {darkMode ? "Light" : "Dark"} Mode
-      </button>
+      </button> */}
       </>
   );
 };
