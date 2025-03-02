@@ -10,10 +10,10 @@ export const Header = () => {
     <nav className='py-4 flex justify-between items-center'>
       <Link>
          <img src="/" alt="" />
-         <p>Prohire</p>
+         <p className='text-[20px] text-red-600 font-extrabold tracking-wide'>PROHIRE</p>
       </Link>
 
-      <Button>Login</Button>
+      <Button variant="outline">Login</Button>
     </nav>
     </>
   )

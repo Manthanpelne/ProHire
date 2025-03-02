@@ -4,9 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite", 
     "build": "vite build",
-    "lint": "eslint .",
+    "watch": "npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch", 
+    "start": "vite", 
+    "lint": "eslint .", 
     "preview": "vite preview"
   },
   "dependencies": {
