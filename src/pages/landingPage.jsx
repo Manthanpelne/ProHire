@@ -1,22 +1,61 @@
+import { Button } from "@/components/ui/button";
 import { useTheme } from "@/contextApi/context";
-
+import { Link } from "react-router-dom";
+import React from "react";
+import Autoplay from "embla-carousel-autoplay"
+import companies from "../data/companies.json"
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 
 export const LandingPage = () => {
-  const { darkMode, toggleTheme } = useTheme();
+ 
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
+
+  console.log(companies)
 
   return (
-   <>
-      {/* <h1 className="text-3xl font-bold">Welcome to my Website</h1>
+     <>
+     <section className="max-w-screen-2xl mx-auto">
+    <div className="mt-[80px] w-[50%] m-auto  text-center">
+     <h1 className="text-[35px] md:text-6xl font-bold tracking-wide">Discover your dream Job!</h1> 
+     <p className="text-gray-400 text-[20px] mt-4">Lorem ipsum dolor sit amet.</p> 
+    </div>
 
-      <button
-        onClick={toggleTheme}
-        className="mt-6 px-6 w-[300px] py-3 rounded-lg text-lg font-semibold transition-all duration-300 border border-gray-400 shadow-md 
-                     hover:shadow-lg hover:scale-105 
-                     bg-gray-900 text-white dark:bg-gray-900 cursor-pointer dark:text-white"
-      >
-        Toggle {darkMode ? "Light" : "Dark"} Mode
-      </button> */}
+<div className="flex mt-6 justify-center gap-6">
+    <Link to="/jobs">
+     <Button size="lg">Find Job</Button>
+    </Link>
+    <Link to="/post-job">
+     <Button size="lg" varient="outline">Post Job</Button>
+    </Link>
+</div>
+
+<div>
+<Carousel className="w-full py-10">
+      <CarouselContent className="-ml-1">
+        {companies.map(({name,id,path})=>{
+        return (
+        <CarouselItem key={id}>
+        <img src={path} alt={name} />
+        </CarouselItem>
+        );
+        })}
+      </CarouselContent>
+    </Carousel>
+
+</div>
+
+ 
+     </section>
       </>
   );
 };
