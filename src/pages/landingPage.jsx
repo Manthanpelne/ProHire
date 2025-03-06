@@ -9,16 +9,13 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel"
 
 
 export const LandingPage = () => {
  
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  )
+  const plugin = Autoplay({ delay: 2000})
+  
 
   console.log(companies)
 
@@ -40,12 +37,13 @@ export const LandingPage = () => {
 </div>
 
 <div>
-<Carousel className="w-full py-10">
-      <CarouselContent className="-ml-1">
+<Carousel className="w-[80%] m-auto mt-[70px] py-10"
+      plugins={[Autoplay({delay:2000})]}>
+      <CarouselContent className="flex items-center gap5 sm:gap-20 px-1">
         {companies.map(({name,id,path})=>{
         return (
-        <CarouselItem key={id}>
-        <img src={path} alt={name} />
+        <CarouselItem key={id} className="basis-1/3 lg:basis-1/6">
+        <img className="h-9 sm:h-14 object-contain" src={path} alt={name} />
         </CarouselItem>
         );
         })}
