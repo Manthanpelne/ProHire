@@ -37,7 +37,7 @@ export const LandingPage = () => {
 </div>
 
 <div>
-<Carousel className="w-[80%] m-auto mt-[70px] py-10"
+<Carousel className="w-[80%] z-10 m-auto mt-[70px] py-10"
       plugins={[Autoplay({delay:2000})]}>
       <CarouselContent className="flex items-center gap5 sm:gap-20 px-1">
         {companies.map(({name,id,path})=>{
