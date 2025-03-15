@@ -17,7 +17,7 @@ export const AppLayout = () => {
         {/* Background */}
         <div className="absolute inset-0 w-full h-full">
           <div className={`absolute inset-0 w-full h-full bg-gradient-to-br
-            ${darkMode ? "from-black via-gray-800 to-black" : "from-gray-200 via-white to-gray-100"}`}>
+            ${darkMode ? "from-black via-gray-800 to-black" : "bg-[#f2efef]"}`}>
           </div>
           <div className={`absolute inset-0 w-full h-full opacity-60 [background-size:20px_20px]
             ${darkMode ? "bg-[radial-gradient(circle,rgba(255,255,255,0.15)_1px,transparent_1px)]" 

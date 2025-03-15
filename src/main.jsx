@@ -23,6 +23,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
      publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
       <App />
     </ClerkProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
   </ThemeProvider>
 )
