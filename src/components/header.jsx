@@ -8,13 +8,15 @@ import {
   SignIn,
   SignInButton,
   UserButton,
+  useUser,
 } from "@clerk/clerk-react";
 import { BriefcaseBusiness, Heart, PenBox } from "lucide-react";
 
 export const Header = () => {
+
   const { darkMode, toggleTheme } = useTheme();
   const [showSignInPopup, setShowSignInPopup] = useState(false);
-
+  const {user} = useUser()
   const [search, setSearch] = useSearchParams()
 
   useEffect(()=>{
@@ -33,12 +35,12 @@ export const Header = () => {
   return (
     <>
     <section className="max-w-screen-2xl mx-auto">
-      <nav className="py-4 px-4 mt-4 flex justify-between rounded-[15px] md:w-[90%] 2xl:w-[1380px] m-auto bg-white/10 items-center">
+      <nav className="py-4 px-4 mt-4 flex justify-between rounded-[15px] border-white md:w-[880px] 2xl:w-[1280px] m-auto bg-white/10 items-center">
         <Link to="/">
           <p className="text-[20px] underline hover:text-gray-300 font-extrabold tracking-wide">PROHIRE</p>
         </Link>
 
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-6 items-center">
           <button
             onClick={toggleTheme}
             className="px-6 w-[100px] py-3 rounded-lg text-[14px] font-semibold transition-all duration-300 border border-gray-400 shadow-md 
@@ -60,7 +62,8 @@ export const Header = () => {
             </SignedOut>
 
             <SignedIn>
-              <Link to="/post-job">
+             { user?.unsafeMetadata?.role === "recruiter" && 
+             ( <Link to="/post-job">
                 <Button
                   variant="destructive"
                   className="rounded-full flex items-center"
@@ -69,6 +72,7 @@ export const Header = () => {
                   Post a Job
                 </Button>
               </Link>
+            )}
               <UserButton
                 appearance={{
                   elements: {

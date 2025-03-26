@@ -9,6 +9,11 @@ export const ProtectedRoute = ({children}) => {
   if(isLoaded && !isSignedIn && isSignedIn!==undefined){
     return <Navigate to="/?sign-in=true"/>
   }
+   
   
-  return children
+  //check if user is onboarded or not. if not, make him onboard first
+  if(user !== undefined && !user?.unsafeMetadata?.role && pathname !== "/onboarding")
+
+  return <Navigate to = "/onboarding" />
+  return children;
 }
