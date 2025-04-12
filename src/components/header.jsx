@@ -35,7 +35,7 @@ export const Header = () => {
   return (
     <>
     <section className="max-w-screen-2xl mx-auto">
-      <nav className="py-4 px-4 mt-4 flex justify-between rounded-[15px] border-white md:w-[880px] 2xl:w-[1280px] m-auto bg-white/10 items-center">
+      <nav className="py-4 border-2 px-4 mt-4 flex justify-between rounded-[15px] border-white dark:border-[#26374b] md:w-[880px] 2xl:w-[1380px] m-auto bg-[#dddbdb] dark:bg-white/10 items-center">
         <Link to="/">
           <p className="text-[20px] underline hover:text-gray-300 font-extrabold tracking-wide">PROHIRE</p>
         </Link>

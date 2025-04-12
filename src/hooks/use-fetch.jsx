@@ -9,14 +9,14 @@ export const useFetch = (cb, options = {}) => {
 
    const {session} = useSession()
 
-    const fetchData = async (...args) => {
+    const fn = async (...args) => {
         setLoading(true)
         try {
             const supabaseAccessToken = await session?.getToken({
                 template : "supabase"
             })
-            const data = await cb(supabaseAccessToken, options, ...args)
-            setData(data)
+            const response = await cb(supabaseAccessToken, options, ...args)
+            setData(response)
             setError(null)
         } catch (error) {
             setError(error)
@@ -25,5 +25,6 @@ export const useFetch = (cb, options = {}) => {
         }
     }
 
-    return {fetchData, data, error, loading}
+    return {fn, data , error, loading}
 }
+
