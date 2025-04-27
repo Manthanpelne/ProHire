@@ -63,6 +63,7 @@ const ApplyJobDrawer = ({ applied = false, user, fetchJob, job }) => {
     fnApply({
       ...data,
       job_id: job.id,
+      candidate_id : user?.id,
       name: user.fullName,
       status: "applied",
       resume: data.resume[0],
@@ -72,17 +73,19 @@ const ApplyJobDrawer = ({ applied = false, user, fetchJob, job }) => {
     });
   };
 
-  //console.log(job.isOpen,user)
+ console.log("job", job)
 
   return (
+    
+    <>
     <Drawer open={applied ? false : undefined}>
       <DrawerTrigger asChild  className="cursor-pointer border-2">
         <Button
-          disabled = {job?.applications?.length>0}
+          disabled = {job?.applications?.status === "applied"}
           className="shadow-xl py-6 px-20 text-lg bg-[#514f4f] hover:bg-black text-white dark:bg-[#9d98a2]/30 dark:hover:bg-[#9d98a2]/20 cursor-pointer m-auto mt-5"
         >
           {job?.isOpen
-            ? ((job?.applications?.length>0)
+            ? ((job?.applications?.status === "applied" || !job?.isOpen)
               ? "Applied"
               : "Apply Now")
             : "Hiring Closed"}
@@ -186,6 +189,7 @@ const ApplyJobDrawer = ({ applied = false, user, fetchJob, job }) => {
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
+  </>
   );
 };
 

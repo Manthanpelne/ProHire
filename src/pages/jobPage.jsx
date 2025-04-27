@@ -39,7 +39,7 @@ export const JobPage = () => {
     if (isLoaded) fnJob();
   }, [isLoaded]);
 
-  //console.log(job)
+  console.log(job?.applications?.length)
 
   if (!isLoaded || loadingJob) {
     return <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />;
@@ -63,7 +63,7 @@ export const JobPage = () => {
             <Briefcase /> {job?.applications?.length} Applicant
             </div>
             <div className="flex gap-2 items-center">
-              {job?.isOpen? <><DoorOpen/></> : <><DoorClosed/>Closed</>  
+              {job?.isOpen? <div className="flex gap-2 items-center text-green-700"><DoorOpen/>Hiring</div> : <div className="flex gap-2 items-center text-red-700"><DoorClosed/>Hiring Closed</div>  
             }
           </div>
         </div>
@@ -72,7 +72,7 @@ export const JobPage = () => {
         {/* hiring status */}
         {job?.recruiter_id === user?.id && 
         <Select onValueChange={handleStatusChange}>
-          <SelectTrigger className={`w-full ${job?.isOpen ? "bg-green-950" : "bg-red-950"}`}>
+          <SelectTrigger className={`w-full text-white ${job?.isOpen ? "bg-green-900" : "bg-red-950"}`}>
             <SelectValue placeholder={"Hiring Status" + (job?.isOpen ? "(Open)":"(closed)")} />
           </SelectTrigger>
           <SelectContent>
@@ -98,7 +98,7 @@ export const JobPage = () => {
         job = {job}
         user = {user}
         fetchJob = {fnJob}
-        applied = {job?.applocations?.find((ap)=>ap.candidate_id===user_id)}
+        applied = {job?.applications?.find((ap)=>ap.candidate_id===user?.id)}
         />
     }
 

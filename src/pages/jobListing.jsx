@@ -32,16 +32,14 @@ export const JobListing = () => {
 
   const { fn: fnCompanies, data:companies } = useFetch(getCompanies);
 
-
-  useEffect(() => {
-    if (isLoaded) fnJobs();
-  }, [isLoaded, location, company_id, searchQuery]);
-
   useEffect(() => {
     if (isLoaded) fnCompanies();
   }, [isLoaded]);
-
   
+  
+  useEffect(() => {
+    if (isLoaded) fnJobs();
+  }, [isLoaded, location, company_id, searchQuery]);
 
   function handleSearch(e) {
     e.preventDefault();
@@ -58,7 +56,7 @@ export const JobListing = () => {
   }
 
   return (
-    <div>
+    <div className="max-w-screen-2xl mx-auto">
       <h1 className="font-extrabold text-4xl md:text-6xl text-center mt-10 md:mt-20">
         Latest Jobs
       </h1>
@@ -132,7 +130,7 @@ export const JobListing = () => {
       )}
 
       {loadingJobs === false && (
-        <div className="w-[90%] md:w-[80%] m-auto mt-[50px] md:mt-[40px] grid grid-cols-1 md:grid-cols-2  gap-6 md:gap-20">
+        <div className="w-[90%] md:w-[80%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 m-auto mt-[50px] md:mt-[40px]  ">
           {jobs?.length ? (
             jobs.map((job) => {
               return (

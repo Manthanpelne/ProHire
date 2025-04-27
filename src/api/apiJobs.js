@@ -100,3 +100,37 @@ export const updateHiringStatus = async (token, { job_id },isOpen) => {
   }
   return data;
 };
+
+
+/// adding job by recruiter
+export const addNewJob = async (token, _, jobData) => {
+  const supabase = await supaBaseClient(token);
+
+  // If the job is already saved, remove it
+  const { data, error } = await supabase
+    .from("jobs")
+    .insert([jobData])
+    .select()
+
+  if (error) {
+    console.error("Error creating Job", error);
+    return null;
+  }
+  return data;
+};
+
+
+export const getSavedJobs = async (token) => {
+  const supabase = await supaBaseClient(token);
+
+  // If the job is already saved, remove it
+  const { data, error } = await supabase
+    .from("saved_jobs")
+    .select("*, job:jobs(*, company:companies(name,logo_url))")
+
+  if (error) {
+    console.error("Error fetching saved Jobs", error);
+    return null;
+  }
+  return data;
+};

@@ -29,14 +29,10 @@ export const JobCard = ({ job, isMyJob = false, savedInit = false, onJobSaved = 
 
 
   const handleSaveJobs = async () => {
-    const response = await fnSavedJob({
+    await fnSavedJob({
       user_id: user.id,
       job_id: job.id,
     });
-    // Update the saved state based on the response of the save/unsave action
-    if (response) {
-      setSaved(response.isSaved); // Adjust based on your API response
-    }
     onJobSaved();
   };
 
@@ -53,7 +49,7 @@ useEffect(() => {
   const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   return (
-<Card className="xl:max-w-6xl relative m-auto rounded-3xl shadow-lg dark:bg-[black]/60 flex flex-col h-full">
+<Card className=" w-full h-full relative m-auto rounded-3xl shadow-lg dark:bg-[black]/60 flex flex-col">
   <CardHeader>
     <CardTitle className="flex gap-2 items-center text-[18px]">
       {job.title}

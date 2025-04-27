@@ -12,12 +12,12 @@ export const AppLayout = () => {
   
     return (
       <main className={`relative  min-h-screen flex flex-col transition-colors duration-500
-        ${darkMode ? "bg-black text-white" : "bg-white text-black"}`}>
+        ${darkMode ? "bg-black text-white" : "bg-[#F7F8F9] text-black"}`}>
         
         {/* Background */}
         <div className="absolute inset-0 w-full h-full">
           <div className={`absolute inset-0 w-full h-full bg-gradient-to-br
-            ${darkMode ? "from-black via-[#262626] to-black" : "bg-[#f2efef]"}`}>
+            ${darkMode ? "from-black via-[#262626] to-black" : "bg-[#F7F8F9]"}`}>
           </div>
           <div className={`absolute inset-0 w-full h-full opacity-60 [background-size:20px_20px]
             ${darkMode ? "bg-[radial-gradient(circle,rgba(255,255,255,0.15)_1px,transparent_1px)]" 

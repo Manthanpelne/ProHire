@@ -82,7 +82,7 @@ export const Header = () => {
               >
                 <UserButton.MenuItems>
                   <UserButton.Link
-                    label="My Jobs"
+                    label={user?.unsafeMetadata?.role === "recruiter" ? "My Jobs" : "My Applications"}
                     labelIcon={<BriefcaseBusiness size={15} />}
                     href="/my-jobs"
                   />
