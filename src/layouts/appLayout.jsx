@@ -1,3 +1,4 @@
+
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { useTheme } from "@/contextApi/context";
@@ -11,7 +12,7 @@ export const AppLayout = () => {
     const { darkMode } = useTheme();
   
     return (
-      <main className={`relative  min-h-screen flex flex-col transition-colors duration-500
+      <main className={`relative poppins min-h-screen flex flex-col transition-colors duration-500
         ${darkMode ? "bg-black text-white" : "bg-[#F7F8F9] text-black"}`}>
         
         {/* Background */}
@@ -31,7 +32,7 @@ export const AppLayout = () => {
           <div className="flex-1">
             <Outlet />
           </div>
-          <Footer />
+           <Footer/>
         </div>
 
         

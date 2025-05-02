@@ -36,22 +36,22 @@ useEffect(() => {
 //console.log(user)
 
   if(!isLoaded){
-    return <BarLoader className='mb-4' width={"100%"} color='#36d7b7'/>
+    return <BarLoader className='mb-4' width={"100%"} color='#8309da'/>
   }
 
 
   return (
-    <section className='max-w-screen-2xl mx-auto'>
+    <section className='max-w-screen-2xl mx-auto pb-20'>
         
-         <div className='w-[80%]  px-10 py-12 rounded-[25px] bg-[gray]/5 shadow-xl border-[#bcb8b8] m-auto mt-[60px] flex justify-between items-center'>
-               <div>
-                  <h1 className='text-7xl font-extrabold tracking-tight'>I am a..</h1>
-                  <div className='mt-8 flex gap-5'>
-                   <Button onClick={()=>handleRoleselection("candidate")} className=" bg-[#af63ff] text-white py-7 w-[200px] text-[20px]">Candidate</Button>
-                   <Button onClick={()=>handleRoleselection("recruiter")} variant="destructive" className="w-[200px] py-7 text-[20px]">Recruiter</Button>
+         <div className='w-[90%] md:w-[80%] textbox md:px-10 py-12 rounded-[25px] m-auto mt-20 md:mt-30 flex flex-col md:flex-row gap-10 md:gap-0 justify-between items-center'>
+               <div className='w-full md:w-auto'>
+                  <h1 className='text-3xl md:text-7xl font-extrabold tracking-tight'>I am a..</h1>
+                  <div className='mt-8 flex flex-col md:flex-row gap-5'>
+                   <Button onClick={()=>handleRoleselection("candidate")} className="w-full btnStyle text-white  cursor-pointer py-7 md:w-[200px] text-[20px]">Candidate</Button>
+                   <Button onClick={()=>handleRoleselection("recruiter")} className="w-full md:w-[200px] bg-blue-600 cursor-pointer hover:bg-blue-700 text-white py-7 text-[20px]">Recruiter</Button>
                   </div>
                </div>
-            <div className='w-[50%]'>
+            <div className='w-full md:w-[50%]'>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 812.98 490.439" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" artist="Katerina Limpitsouni" source="https://undraw.co/">
                   <g id="Group_309" data-name="Group 309" transform="translate(-407 -291)">
                     <g id="Group_100" data-name="Group 100" transform="translate(375 238)">

@@ -1,7 +1,7 @@
 [
     {
       "name": "amazon",
-      "path": "/companies/amazon.svg",
+      "path": "/companies/flipkart.png",
       "id": 1
     },
     {
@@ -16,7 +16,7 @@
     },
     {
       "name": "ibm",
-      "path": "/companies/ibm.svg",
+      "path": "/companies/IBM.png",
       "id": 4
     },
     {
@@ -33,10 +33,5 @@
       "name": "netflix",
       "path": "/companies/netflix.png",
       "id": 7
-    },
-    {
-      "name": "uber",
-      "path": "/companies/uber.svg",
-      "id": 8
     }
   ]

@@ -81,13 +81,11 @@ const ApplyJobDrawer = ({ applied = false, user, fetchJob, job }) => {
     <Drawer open={applied ? false : undefined}>
       <DrawerTrigger asChild  className="cursor-pointer border-2">
         <Button
-          disabled = {job?.applications?.status === "applied"}
-          className="shadow-xl py-6 px-20 text-lg bg-[#514f4f] hover:bg-black text-white dark:bg-[#9d98a2]/30 dark:hover:bg-[#9d98a2]/20 cursor-pointer m-auto mt-5"
+          disabled = {!job?.isOpen || applied}
+          className="shadow-xl py-6 px-20 text-lg text-white btnStyle cursor-pointer m-auto mt-5"
         >
           {job?.isOpen
-            ? ((job?.applications?.status === "applied" || !job?.isOpen)
-              ? "Applied"
-              : "Apply Now")
+            ? (applied ? "Applied" : "Apply Now")
             : "Hiring Closed"}
         </Button>
       </DrawerTrigger>
@@ -176,8 +174,8 @@ const ApplyJobDrawer = ({ applied = false, user, fetchJob, job }) => {
             <p className="text-orange-500">{errorApply?.message}</p>
           )}
 
-          {loadingApply && <BarLoader width={"100%"} color="#36d7b7" />}
-          <Button className="cursor-pointer">Apply</Button>
+          {loadingApply && <BarLoader width={"100%"} color="#8309da" />}
+          <Button className="cursor-pointer btnStyle text-white">Apply</Button>
         </form>
 
         <DrawerFooter>

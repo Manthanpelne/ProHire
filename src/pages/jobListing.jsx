@@ -32,6 +32,8 @@ export const JobListing = () => {
 
   const { fn: fnCompanies, data:companies } = useFetch(getCompanies);
 
+  console.log("companies", jobs);
+
   useEffect(() => {
     if (isLoaded) fnCompanies();
   }, [isLoaded]);
@@ -56,33 +58,33 @@ export const JobListing = () => {
   }
 
   return (
-    <div className="max-w-screen-2xl mx-auto">
-      <h1 className="font-extrabold text-4xl md:text-6xl text-center mt-10 md:mt-20">
+    <div className="max-w-screen-2xl mx-auto mb-20">
+      <h1 className="font-extrabold text-4xl md:text-6xl text-center mt-28 md:mt-30">
         Latest Jobs
       </h1>
 
       {/* all filters here */}
       <form
         onSubmit={handleSearch}
-        className="flex w-[80%] m-auto items-center gap-3 mt-10"
+        className="flex w-[90%] md:w-[80%] m-auto items-center gap-3 mt-10"
       >
         <Input
           type="text"
           placeholder="search Jobs by Title..."
           name="search-query"
-          className="h-full py-3 dark:border-[#5a5959] bg-[#9d98a2]/10 dark:bg-black/60 flex-1 px-4 text-md"
+          className="h-full py-3 dark:border-[#5a5959] bg-[#9d98a2]/10 dark:bg-[black]/30 flex-1 px-4 text-md"
         />
         <Button
           type="submit"
-          className="h-full shadow-xl py-3 px-20 md:w-28  bg-[#514f4f] hover:bg-black text-white dark:bg-[#9d98a2]/30 dark:hover:bg-[#9d98a2]/20 cursor-pointer"
+          className="h-full shadow-xl py-3 md:px-20 md:w-28 btnStyle text-white cursor-pointer"
         >
           Search
         </Button>
       </form>
 
-      <div className="w-[80%] m-auto mt-5 flex flex-col items-center sm:flex-row gap-4">
+      <div className="w-[90%] md:w-[80%] m-auto mt-5 flex flex-col items-center sm:flex-row gap-4">
         <Select value={location} onValueChange={(value)=>setLocation(value)}>
-          <SelectTrigger className="border-[1px] py-5 bg-[#9d98a2]/10  dark:border-[#5a5959]">
+          <SelectTrigger className="border-[1px] py-5 bg-[#9d98a2]/10 dark:bg-[black]/30  dark:border-[#5a5959]">
             <SelectValue placeholder="Filter by Location" />
           </SelectTrigger>
           <SelectContent>
@@ -101,7 +103,7 @@ export const JobListing = () => {
           value={company_id}
           onValueChange={(value) => setCompany_id(value)}
         >
-          <SelectTrigger className="border-[1px] py-5 bg-[#9d98a2]/10  dark:border-[#5a5959]">
+          <SelectTrigger className="border-[1px] py-5 bg-[#9d98a2]/10  dark:bg-[black]/30  dark:border-[#5a5959]">
             <SelectValue placeholder="Filter by Company" />
           </SelectTrigger>
           <SelectContent>
@@ -117,7 +119,7 @@ export const JobListing = () => {
           </SelectContent>
         </Select>
         <Button onClick={clearFilters}
-          className="px-10.5 shadow-xl py-5 bg-[#514f4f] hover:bg-black text-white dark:bg-[#9d98a2]/30 dark:hover:bg-[#9d98a2]/20"
+          className="w-full md:w-auto px-10.5 shadow-xl py-5 cursor-pointer btnStyle text-white"
           // onClick={clearFilters}
         >
           Clear Filters
@@ -126,7 +128,7 @@ export const JobListing = () => {
 
       {/* jobs */}
       {loadingJobs && (
-        <BarLoader className="m-auto mt-4" width={"50%"} color="#36d7b7" />
+        <BarLoader className="m-auto mt-4" width={"50%"} color="#8309da" />
       )}
 
       {loadingJobs === false && (

@@ -8,13 +8,13 @@ export const MyJobs = () => {
   const { user, isLoaded } = useUser();
 
   if (!isLoaded) {
-    return <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />;
+    return <BarLoader className="mb-4" width={"100%"} color="#8309da" />;
   }
 
   return (
-    <section className='max-w-screen-2xl mx-auto'>
-    <div className='w-[90%] md:w-[80%] m-auto mt-10 md:mt-20'>
-      <h1 className="font-extrabold text-5xl sm:text-7xl text-center pb-8">
+    <section className='max-w-screen-2xl mx-auto pb-20'>
+    <div className='w-[90%] md:w-[80%] m-auto mt-28 md:mt-30'>
+      <h1 className="font-extrabold text-3xl md:text-5xl  text-center pb-8">
         {user?.unsafeMetadata?.role === "candidate"
           ? "My Applications"
           : "My Jobs"}

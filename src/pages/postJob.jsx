@@ -72,16 +72,13 @@ useEffect(() => {
 
 
   if (!isLoaded || loadingCompanies) {
-    return <BarLoader width={"100%"} color="#36d7b7" />;
+    return <BarLoader width={"100%"} color="#8309da" />;
   }
 
-  if (user?.unsafeMetadata?.role !== "recruiter") {
-    return <Navigate to="/jobs" />;
-  }
 
   return (
-    <div className="w-[90%] md:w-[80%] m-auto">
-      <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-center mt-[30px] md:mt-[50px]">
+    <div className="w-[90%] md:w-[80%] m-auto mb-20">
+      <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-center mt-28 md:mt-30">
         Post A Job
       </h1>
 
@@ -200,12 +197,12 @@ useEffect(() => {
           {errorCreateJob?.message && (
           <p className="text-orange-500">{errorCreateJob?.message}</p>
         )}
-          {loadingCreateJob && <BarLoader width={"100%"} color="#36d7b7" />}
+          {loadingCreateJob && <BarLoader width={"100%"} color="#8309da" />}
           </div>
           <Button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-600 cursor-pointer mt-2 text-white"
-            size="lg"
+            className="btnStyle cursor-pointer mt-2 text-[16px] text-white"
+  
           >
             Submit
           </Button>

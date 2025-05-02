@@ -86,8 +86,7 @@ export const CompanyDrawer = ({ fetchCompanies }) => {
           <Button
             type="button"
             onClick={handleSubmit(onSubmit)}
-            variant="destructive"
-            className="w-40"
+            className="w-40 btnStyle text-white"
           >
             Add
           </Button>

@@ -9,9 +9,10 @@ import {
 } from "./ui/card";
 import { Heart, MapPinIcon, Trash2Icon } from "lucide-react";
 import { Link } from "react-router-dom";
-import { saveJob } from "@/api/apiJobs";
+import { deleteJob, saveJob } from "@/api/apiJobs";
 import { Button } from "./ui/button";
 import { useFetch } from "@/hooks/use-fetch";
+import { BarLoader } from "react-spinners";
 
 export const JobCard = ({ job, isMyJob = false, savedInit = false, onJobSaved = () => {} }) => {
 
@@ -43,6 +44,16 @@ useEffect(() => {
 }, [savedJob])
 
 
+// handling delete job
+const {loading: loadingDeleteJob, fn: fnDeleteJob} = useFetch(deleteJob, {
+  job_id : job?.id})
+
+
+  const handleDeleteJob = async () =>{
+   await fnDeleteJob()
+   onJobSaved()
+  }
+
   //console.log("saved:", saved);
 
 
@@ -50,14 +61,18 @@ useEffect(() => {
 
   return (
 <Card className=" w-full h-full relative m-auto rounded-3xl shadow-lg dark:bg-[black]/60 flex flex-col">
+{loadingDeleteJob && (
+  <BarLoader className="m-auto mt-4" width={"100%"} color="#8309DA"/>
+)}
   <CardHeader>
     <CardTitle className="flex gap-2 items-center text-[18px]">
       {job.title}
-      {!isMyJob && (
+      {isMyJob && (
         <Trash2Icon
           fill="red"
           size={18}
           className="text-red-300 cursor-pointer"
+          onClick={handleDeleteJob}
         />
       )}
     </CardTitle>
@@ -81,7 +96,7 @@ useEffect(() => {
 
   <CardFooter className="flex gap-6 items-center mt-5"> {/* Add margin-top for the gap */}
     <Link to={`/job/${job.id}`} className="w-full">
-      <button className="w-full bg-blue-500 cursor-pointer text-white py-2 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out">
+      <button className="w-full btnStyle  cursor-pointer text-white py-2 rounded-md">
         View Job
       </button>
     </Link>
@@ -89,7 +104,7 @@ useEffect(() => {
     {!isMyJob && (
       <Button variant="outline" className="w-15 cursor-pointer shadow-lg" onClick={handleSaveJobs} disabled={loadingSavedJob}>
         {saved ? (
-          <Heart className="" size={24} stroke="red" fill="#eebbbb" />
+          <Heart className="" size={24} stroke="#8309DA" fill="#8309DA" />
         ) : (
           <Heart className="" size={24} />
         )}

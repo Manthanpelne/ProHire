@@ -50,7 +50,7 @@ export const updateApplicationStatus = async (token, { job_id }, status) => {
 
 
 //get applications
-export const getApplications = async (token, user_id) => {
+export const getApplications = async (token, {user_id}) => {
   const supabase = await supaBaseClient(token);
   const { data, error } = await supabase
     .from("applications")

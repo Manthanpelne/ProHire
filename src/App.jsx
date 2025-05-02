@@ -10,6 +10,7 @@ import { SavedJobs } from './pages/savedJobs'
 import { MyJobs } from './pages/myJobs'
 import { Onboarding } from './pages/onboarding'
 import { ProtectedRoute } from './components/protected-route'
+import { ErrorPage } from './pages/errorPage'
 
 
 
@@ -67,6 +68,12 @@ const router = createBrowserRouter([
           <ProtectedRoute>
             <MyJobs/>
           </ProtectedRoute>
+        )
+      },
+      {
+        path: "*",
+        element: (
+            <ErrorPage/>
         )
       }
     ]

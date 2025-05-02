@@ -22,15 +22,15 @@ export const SavedJobs = () => {
 
 
   return (
-    <section className='max-w-screen-2xl mx-auto'>
+    <section className='max-w-screen-2xl mx-auto mb-20'>
 
-      <h1 className='font-extrabold text-4xl md:text-6xl text-center mt-10 md:mt-20'>Saved Jobs</h1>
+      <h1 className='font-extrabold text-4xl md:text-6xl text-center mt-28 md:mt-30'>Saved Jobs</h1>
 
       {loadingSavedJobs &&
-       <BarLoader className="m-auto my-2" width={"80%"} color="#36d7b7" /> }
+       <BarLoader className="m-auto my-2" width={"80%"} color="#8309da" /> }
   
   {loadingSavedJobs === false && (
-  <div className="w-[90%] md:w-[80%] m-auto mt-8"> {/* Remove the grid classes */}
+  <div className="w-[90%] md:w-[80%] m-auto mt-12"> {/* Remove the grid classes */}
     {savedJobs?.length ? (
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Add grid back here */}
         {savedJobs?.map((saved) => (

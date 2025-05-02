@@ -39,21 +39,21 @@ export const JobPage = () => {
     if (isLoaded) fnJob();
   }, [isLoaded]);
 
-  console.log(job?.applications?.length)
+  console.log("job",job)
 
   if (!isLoaded || loadingJob) {
-    return <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />;
+    return <BarLoader className="mb-4" width={"100%"} color="#8309DA" />;
   }
 
   return (
-    <div className="w-[90%] md:w-[80%] m-auto flex flex-col gap-5 md:gap-4">
+    <div className="w-[90%] md:w-[80%] m-auto mt-28 md:mt-30 mb-30 flex flex-col gap-5 md:gap-6">
 
-      <div className="flex justify-between mt-[40px] gap-5 items-center">
+      <div className="flex justify-between mt-4 gap-5 items-center">
         <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold">{job?.title} </h1>
-        <img className="w-20 pt-2 md:pt-0 sm:w-[200px]" src={job?.company?.logo_url} alt="" />
+        <img className="w-20 pt-2 md:pt-0 sm:w-[160px]" src={job?.company?.logo_url} alt="" />
       </div>
 
-      <div className="flex gap-20">
+      <div className="flex justify-between md:gap-20">
           <div className="flex gap-2">
             <MapPinIcon />
             {job?.location}
@@ -106,9 +106,11 @@ export const JobPage = () => {
 
     {job?.applications?.length > 0 && job?.recruiter_id === user?.id && (
       <div className="flex flex-col gap-3">
-        <h2 className="text-2xl md:text-3xl font-bold mt-10">Recieved Applications</h2>
-        {job?.applications.map((app)=>{
-          return <ApplicationCard key={app.id} app={app}/>
+        <h2 className="text-2xl md:text-3xl font-bold mt-10 pb-4">Recieved Applications</h2>
+        {job?.applications?.map((application)=>{
+          return (
+          <ApplicationCard key={application.id} application={application}/>
+          );
         })}
       </div>
     )}

@@ -134,3 +134,42 @@ export const getSavedJobs = async (token) => {
   }
   return data;
 };
+
+
+
+//fetch all jobs by recruiter in my my jobs page
+export const getMyJobs  = async (token,{recruiter_id}) => {
+  const supabase = await supaBaseClient(token);
+
+  // If the job is already saved, remove it
+  const { data, error } = await supabase
+    .from("jobs")
+    .select("*, company:companies(name,logo_url))")
+    .eq("recruiter_id", recruiter_id)
+
+  if (error) {
+    console.error("Error fetching Jobs", error);
+    return null;
+  }
+  return data;
+};
+
+
+
+//delete job by recruiter
+export const deleteJob  = async (token,{job_id}) => {
+  const supabase = await supaBaseClient(token);
+
+  // If the job is already saved, remove it
+  const { data, error } = await supabase
+    .from("jobs")
+    .delete()
+    .eq("id", job_id)
+    .select()
+
+  if (error) {
+    console.error("Error deleting Job", error);
+    return null;
+  }
+  return data;
+};
