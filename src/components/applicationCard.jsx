@@ -23,7 +23,7 @@ export const ApplicationCard = ({ application, isCandidate = false }) => {
     fnHiringStatus(status);
   };
 
-  console.log("application", application);
+  //console.log("application", application);
 
   return (
     <Card className="bg-[#181818] rounded-2xl text-white">

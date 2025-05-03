@@ -30,9 +30,9 @@ export const SavedJobs = () => {
        <BarLoader className="m-auto my-2" width={"80%"} color="#8309da" /> }
   
   {loadingSavedJobs === false && (
-  <div className="w-[90%] md:w-[80%] m-auto mt-12"> {/* Remove the grid classes */}
+  <div className="w-[90%] m-auto mt-12"> {/* Remove the grid classes */}
     {savedJobs?.length ? (
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Add grid back here */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"> {/* Add grid back here */}
         {savedJobs?.map((saved) => (
           <JobCard
               key={saved.id}

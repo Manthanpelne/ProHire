@@ -73,7 +73,7 @@ const ApplyJobDrawer = ({ applied = false, user, fetchJob, job }) => {
     });
   };
 
- console.log("job", job)
+ //console.log("job", job)
 
   return (
     

@@ -13,7 +13,7 @@ export const MyJobs = () => {
 
   return (
     <section className='max-w-screen-2xl mx-auto pb-20'>
-    <div className='w-[90%] md:w-[80%] m-auto mt-28 md:mt-30'>
+    <div className='w-[90%] m-auto mt-28 md:mt-30'>
       <h1 className="font-extrabold text-3xl md:text-5xl  text-center pb-8">
         {user?.unsafeMetadata?.role === "candidate"
           ? "My Applications"

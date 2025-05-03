@@ -39,14 +39,14 @@ export const JobPage = () => {
     if (isLoaded) fnJob();
   }, [isLoaded]);
 
-  console.log("job",job)
+  //console.log("job",job)
 
   if (!isLoaded || loadingJob) {
     return <BarLoader className="mb-4" width={"100%"} color="#8309DA" />;
   }
 
   return (
-    <div className="w-[90%] md:w-[80%] m-auto mt-28 md:mt-30 mb-30 flex flex-col gap-5 md:gap-6">
+    <div className="w-[90%] m-auto mt-28 md:mt-30 mb-30 flex flex-col gap-5 md:gap-6">
 
       <div className="flex justify-between mt-4 gap-5 items-center">
         <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold">{job?.title} </h1>
@@ -72,7 +72,7 @@ export const JobPage = () => {
         {/* hiring status */}
         {job?.recruiter_id === user?.id && 
         <Select onValueChange={handleStatusChange}>
-          <SelectTrigger className={`w-full text-white ${job?.isOpen ? "bg-green-900" : "bg-red-950"}`}>
+          <SelectTrigger className={`w-full text-white ${job?.isOpen ? "bg-green-900" : "bg-red-800"}`}>
             <SelectValue placeholder={"Hiring Status" + (job?.isOpen ? "(Open)":"(closed)")} />
           </SelectTrigger>
           <SelectContent>
