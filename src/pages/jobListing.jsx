@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/pagination";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const ITEMS_PER_PAGE = 1; // Changed back to 1 for demonstration
+const ITEMS_PER_PAGE = 9; // Changed back to 1 for demonstration
 
 export const JobListing = () => {
   const [searchQuery, setSearchQuery] = useState("");
