@@ -1,9 +1,7 @@
 # ProHire - Hiring Platform
 
-[![License](https://img.shields.io/badge/License-[Your License]-blue.svg)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/[Your GitHub Username]/[Your Repository Name])](https://github.com/[Your GitHub Username]/[Your Repository Name]/commits/main)
-[![Open Issues](https://img.shields.io/github/issues/[Your GitHub Username]/[Your Repository Name])](https://github.com/[Your GitHub Username]/[Your Repository Name]/issues)
-[![Pull Requests](https://img.shields.io/github/pulls/[Your GitHub Username]/[Your Repository Name])](https://github.com/[Your GitHub Username]/[Your Repository Name]/pulls)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Open Issues](https://img.shields.io/github/issues/octocat/prohire-app)](https://github.com/octocat/prohire-app/issues)
 
 ## Overview
 
