@@ -1,8 +1,5 @@
 # ProHire - Hiring Platform
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Open Issues](https://img.shields.io/github/issues/octocat/prohire-app)](https://github.com/octocat/prohire-app/issues)
-
 ## Overview
 
 ProHire is a modern hiring platform designed to connect job seekers with recruiters efficiently. It provides a seamless experience for both candidates and recruiters, streamlining the hiring process from application to management.
