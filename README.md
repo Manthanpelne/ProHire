@@ -36,7 +36,7 @@ Follow these instructions to get ProHire up and running on your local machine.
 1.  Clone the repository:
 
     ```bash
-    git clone [https://github.com/Manthanpelne/ProHire/.git
+    git clone https://github.com/Manthanpelne/ProHire/.git
     ```
 2.  Install dependencies:
 
