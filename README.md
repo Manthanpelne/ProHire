@@ -1,4 +1,4 @@
-# ProHire - Hiring Platform
+# ProHire
 
 ## Overview
 
@@ -20,22 +20,6 @@ ProHire is a modern hiring platform designed to connect job seekers with recruit
 * Clerk
 * Shadcn UI
 
-## Table of Contents
-
-* [Overview](#overview)
-* [Tech Stack](#tech-stack)
-* [Table of Contents](#table-of-contents)
-* [Getting Started](#getting-started)
-    * [Prerequisites](#prerequisites)
-    * [Installation](#installation)
-* [Usage](#usage)
-    * [Candidate Usage](#candidate-usage)
-    * [Recruiter Usage](#recruiter-usage)
-* [Contributing](#contributing)
-* [License](#license)
-* [Acknowledgments](#acknowledgments)
-* [Support](#support)
-
 ## Getting Started
 
 Follow these instructions to get ProHire up and running on your local machine.
@@ -52,8 +36,7 @@ Follow these instructions to get ProHire up and running on your local machine.
 1.  Clone the repository:
 
     ```bash
-    git clone [https://github.com/](https://github.com/)[Your GitHub Username]/[Your Repository Name].git
-    cd [Your Repository Name]
+    git clone [https://github.com/Manthanpelne/ProHire/.git
     ```
 2.  Install dependencies:
 
@@ -84,13 +67,6 @@ Follow these instructions to get ProHire up and running on your local machine.
 * **Job Posting:** Create and manage job postings.
 * **Application Management:** Track and manage candidate applications efficiently.
 
-## Contributing
-
-We welcome contributions to ProHire! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute.
-
-## License
-
-This project is licensed under the [Your License] License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
@@ -100,8 +76,3 @@ This project is licensed under the [Your License] License - see the [LICENSE](LI
 * Clerk
 * Shadcn UI
 
-## Support
-
-* [Link to your project's issue tracker on GitHub](https://github.com/[Your GitHub Username]/[Your Repository Name]/issues)
-* [Mention if you have a mailing list, Discord server, or other communication channels.]
-* [Provide an email address for support if appropriate.]
